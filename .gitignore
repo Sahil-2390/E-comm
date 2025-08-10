@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+*/node_modules/
+backend/node_modules/
+react-ecommerce/node_modules/
+
+# Environment variables
+.env
+
