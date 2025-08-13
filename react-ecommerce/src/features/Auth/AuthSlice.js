@@ -113,13 +113,16 @@ export const AuthSlice = createSlice({
       })
       .addCase(loginUserAsync.pending, (state) => {
         state.status = 'loading';
+        state.error = null; // Clear previous errors on new login attempt
       })
       .addCase(loginUserAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.loggedInUserToken = action.payload;
+        state.error = null; // Clear any previous errors
       })
       .addCase(loginUserAsync.rejected, (state, action) => {
         state.status = 'idle';
+        state.loggedInUserToken = null; // Ensure user is null on failed login
         state.error = action.payload;
       })
       

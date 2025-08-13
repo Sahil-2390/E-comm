@@ -15,8 +15,8 @@ export  default function Login() {
 
   const error=useSelector(selectError)
   const user=useSelector(selectLoggedInUser)
+  const status=useSelector((state)=>state.auth.status)
  
-  
   const dispatch = useDispatch();
 
   return (
